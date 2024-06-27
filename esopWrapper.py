@@ -13,7 +13,12 @@ feasibleStates = ["1111",
                   "1101",
                   "1011",
                   "0111",
-                ]                                               ###edit this 
+                ]                     ###edit this 
+
+
+
+
+
 numMinterms = len(feasibleStates)
 
 input_data = f"{numVariables}\n{numMinterms}\n"          #format
@@ -35,4 +40,7 @@ run_command = "esopTest"                                       #run c++ code
 result = subprocess.run(run_command, shell = True, capture_output = True, text = True )
 
 print(result.stderr)         #print any errors or output
-print(result.stdout)         #will be changed to sympy output
+output = result.stdout         #will be changed to sympy output
+
+line1 = output[0]
+print(line1)

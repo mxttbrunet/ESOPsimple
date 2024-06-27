@@ -43,8 +43,8 @@ create_from_cubes(tTbl, listOfMinterms, true);       //create truth table with n
 
 
 vector<cube> posEsop;
-vector<cube> mixEsop;
-posEsop = esop_from_pprm(tTbl);
+vector<cube> mixEsop; 
+posEsop = esop_from_pprm(tTbl);                      
 print_cubes(posEsop, numVars, cout);
 
 printf("\n");
