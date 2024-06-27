@@ -25,7 +25,7 @@
 
 #pragma once
 
-#include "bill/bill.hpp"
+//#include "bill/bill.hpp"
 #include "glucose.hpp"
 #include <cassert>
 #include <memory>

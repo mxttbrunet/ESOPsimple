@@ -29,39 +29,28 @@ string minterm;
 
 for(int i = 0; i < numMinterms; i++){
 	input >> minterm;
-	cube cuber = *(new cube(minterm));
-	listOfMinterms.push_back(cuber);
+	cube cuber = *(new cube(minterm));    //collect minterms in kitty::cube vector for truth table
+	listOfMinterms.push_back(cuber);      
 
 
 }
 
 input.close();
 
+dynamic_truth_table tTbl = dynamic_truth_table(numVars);  
 
-cout <<"\n\n";
-print_cubes(listOfMinterms, numMinterms, cout);
-
-
-cout <<"\n\n";
+create_from_cubes(tTbl, listOfMinterms, true);       //create truth table with n number of variables
 
 
-dynamic_truth_table tTbl = dynamic_truth_table(numVars);
+vector<cube> posEsop;
+vector<cube> mixEsop;
+posEsop = esop_from_pprm(tTbl);
+print_cubes(posEsop, numVars, cout);
 
-create_from_cubes(tTbl, listOfMinterms, true);
+printf("\n");
 
-print_binary(tTbl, cout);
-cout << "\n\n";
-
-
-vector<cube> finalAnswer;
-vector<cube> finalAnswer2;
-finalAnswer = kitty::esop_from_pprm(tTbl);
-print_cubes(finalAnswer, numVars, cout);
-
-cout << "\n\n";
-
-finalAnswer2 = kitty::esop_from_optimum_pkrm(tTbl);
-print_cubes(finalAnswer2, numVars, cout);
+mixEsop = esop_from_optimum_pkrm(tTbl);
+print_cubes(mixEsop, numVars, cout);
 
 
 return 0;
