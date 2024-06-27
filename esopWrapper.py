@@ -4,15 +4,24 @@
 #this uses python to take in feasible states and run them through the c++ "easy" library 
 #as long as the .hpp files are in your directory, and you have a c++ compiler the library runs smoothly for its purposes
 #uses an intermediate text file as communication
-
+import sympy as sp
 import subprocess
 
-numVariables= 4                             ####number of boolean variables      ###edit this 
+numVariables= 5                             ####number of boolean variables      ###edit this 
 
-feasibleStates = ["1111",
-                  "1101",
-                  "1011",
-                  "0111",
+feasibleStates = ["11111",
+                  "11110",
+                  "11101",
+                  "11011",
+                  "10111",
+                  "01111",
+                  "01011",
+                  "10101",
+                  "01010",
+                  "01110",
+                  "11010",
+                  "10110",
+                  "01101"
                 ]                     ###edit this 
 
 
@@ -42,5 +51,4 @@ result = subprocess.run(run_command, shell = True, capture_output = True, text =
 print(result.stderr)         #print any errors or output
 output = result.stdout         #will be changed to sympy output
 
-line1 = output[0]
-print(line1)
+print(output)
