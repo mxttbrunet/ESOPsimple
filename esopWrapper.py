@@ -5,7 +5,11 @@
 #as long as the .hpp files are in your directory, and you have a c++ compiler the library runs smoothly for its purposes
 #uses an intermediate text file as communication
 import sympy as sp
+from sympy.abc import a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p
+symbolsAvail = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p]
 import subprocess
+
+
 
 numVariables= 5                             ####number of boolean variables      ###edit this 
 
@@ -50,5 +54,17 @@ result = subprocess.run(run_command, shell = True, capture_output = True, text =
 
 print(result.stderr)         #print any errors or output
 output = result.stdout         #will be changed to sympy output
-
 print(output)
+
+
+boolVars = []
+for i in range(numVariables):
+    boolVars.append(symbolsAvail[i])   #populate list of expression variables 
+
+
+
+
+
+
+
+    

@@ -44,13 +44,14 @@ create_from_cubes(tTbl, listOfMinterms, true);       //create truth table with n
 
 vector<cube> posEsop;
 vector<cube> mixEsop; 
-posEsop = esop_from_pprm(tTbl);                      
-print_cubes(posEsop, numVars, cout);
+posEsop = esop_from_pprm(tTbl);                       //positive polarity ESOP
+print_cubes(posEsop, numVars, cout); 
 
-printf("\n");
+printf("D\n");
 
-mixEsop = esop_from_optimum_pkrm(tTbl);
+mixEsop = esop_from_optimum_pkrm(tTbl);                  //mixed polarity ESOP
 print_cubes(mixEsop, numVars, cout);
+printf("T");
 
 
 return 0;
