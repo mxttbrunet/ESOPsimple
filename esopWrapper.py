@@ -56,11 +56,10 @@ print(result.stderr)         #print any errors or output
 output = result.stdout         #will be changed to sympy output
 print(output)
 
-
-boolVars = []
-for i in range(numVariables):
-    boolVars.append(symbolsAvail[i])   #populate list of expression variables 
-
+open("esopOutput.txt", "w").close()
+with open("esopOutput.txt", "a") as file:
+    file.write(output)
+    
 
 
 

@@ -47,11 +47,11 @@ vector<cube> mixEsop;
 posEsop = esop_from_pprm(tTbl);                       //positive polarity ESOP
 print_cubes(posEsop, numVars, cout); 
 
-printf("D\n");
+cout << "D\n";
 
 mixEsop = esop_from_optimum_pkrm(tTbl);                  //mixed polarity ESOP
 print_cubes(mixEsop, numVars, cout);
-printf("T");
+
 
 
 return 0;
