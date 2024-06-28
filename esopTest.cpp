@@ -52,8 +52,6 @@ cout << "D\n";
 mixEsop = esop_from_optimum_pkrm(tTbl);                  //mixed polarity ESOP
 print_cubes(mixEsop, numVars, cout);
 
-
-
 return 0;
 
 }
