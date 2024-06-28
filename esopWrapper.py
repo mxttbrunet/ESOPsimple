@@ -49,7 +49,7 @@ def produceExpression(truthTable):
   toBeAnded = []
   toBeXord = []
   i = 0
-  for char in esop_tt:
+  for char in truthTable:
       if (char == "1"):
           toBeAnded.append(symbolsAvail[i])
           i+=1
@@ -68,7 +68,7 @@ def produceExpression(truthTable):
     
 
 
-polarity = "mixed"                     #either "mixed" or "positive", ##default is mixed, as it is smaller
+polarity = "positive"                     #either "mixed" or "positive", ##default is mixed, as it is smaller
 numVariables= 5                             ####number of boolean variables  ###edit this     
 feasibleStates = ["11111",
                   "11110",
@@ -90,4 +90,4 @@ feasibleStates = ["11111",
 
 esop_tt = runCppCode(numVariables, feasibleStates, polarity)
 finalEsop = produceExpression(esop_tt)
-print("ESOP***: b ", finalEsop, "\n")
+print("ESOP***: ", finalEsop, "\n")
