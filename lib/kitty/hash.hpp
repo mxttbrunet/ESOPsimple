@@ -55,7 +55,7 @@ inline void hash_combine( std::size_t& seed, std::size_t other )
   const int r = 47;
 
   other *= m;
-  other ^= other >> r;
+  other ^= other >> (r % (sizeof(other) * 8));
   other *= m;
 
   seed ^= other;
